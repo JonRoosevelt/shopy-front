@@ -1,6 +1,4 @@
 import React, {Component} from 'react'
-// import { jsonQuery } from 'json-query'
-// import ListItem from './ListItem'
 
 class ComponentItems extends Component {
     constructor() {
@@ -29,12 +27,15 @@ class ComponentItems extends Component {
 
         const allCategories = Object.keys(this.state.data).map((key) => (
             
-            <div className="App-content" key={key}>
+            <div className="App-items" key={key}>
             <h3>{this.state.data[key].name}</h3>
-            <ul key={key}> 
+            <ul className="list" key={key}> 
                     {this.state.data[key].items.map(item => {
                         return(
-                            <li key={item.id}> {item.name}<br/>{item.description}<br/>{item.quantity}</li>
+                            <li key={item.id}> 
+                            Item: {item.name}<br/>
+                            Descrição: {item.description}<br/>
+                            Quantidade: {item.quantity}</li>
                             )
                     })}
             </ul>
@@ -43,7 +44,7 @@ class ComponentItems extends Component {
 
         return (
             <div>
-                <h2>Categorias</h2>
+                <h2 className="App-subtitle">Categorias</h2>
                 { allCategories }
             </div>
         )
