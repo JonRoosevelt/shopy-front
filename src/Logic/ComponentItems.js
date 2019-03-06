@@ -33,10 +33,10 @@ class ComponentItems extends Component {
                     {this.state.data[key].items.map(item => {
                         return(
                             <li key={item.id}> 
-                            Item: {item.name}<br/>
-                            Descrição: {item.description}<br/>
-                            Quantidade: {item.quantity}</li>
-                            )
+                                Item: {item.name}<br/>
+                                Descrição: {item.description}<br/>
+                                Quantidade: {item.quantity}</li>
+                        )
                     })}
             </ul>
             </div>
