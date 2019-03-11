@@ -1,4 +1,6 @@
 import React, {Component} from 'react'
+// import { withStyles } from '@material-ui/core/styles'
+import { CheckBox } from 'grommet'
 
 class ComponentItems extends Component {
     constructor() {
@@ -7,6 +9,7 @@ class ComponentItems extends Component {
             itemName: "",
             itemQuantity: 0,
             itemDescription: "",
+            checked: true,
             data: []       
         } 
     }
@@ -29,16 +32,18 @@ class ComponentItems extends Component {
             
             <div className="App-items" key={key}>
             <h3>{this.state.data[key].name}</h3>
-            <ul className="list" key={key}> 
+            <div className="list" key={key}> 
                     {this.state.data[key].items.map(item => {
                         return(
-                            <li key={item.id}> 
-                                Item: {item.name}<br/>
-                                Descrição: {item.description}<br/>
-                                Quantidade: {item.quantity}</li>
+                            <CheckBox key={item.id} 
+                                label={item.name}
+                                Descrição={item.description}
+                                Quantidade={item.quantity}
+                                checked={true}
+                            />
                         )
                     })}
-            </ul>
+            </div>
             </div>
         ))
 
